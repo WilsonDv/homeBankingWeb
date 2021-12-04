@@ -39,14 +39,14 @@ public class ClientController {
                 }
                 if (clientRepository.findByEmail(email) !=  null) {
 
-                        return new ResponseEntity<>("email not found", HttpStatus.FORBIDDEN);
+                        return new ResponseEntity<>("email already exist", HttpStatus.FORBIDDEN);
                 }
 
                 Random numberRandom = new Random();
                 Client clientRegistration =  new Client(firstName, lastName, email, passwordEncoder.encode(password));
                 Account accountNew;
 
-                if(accountType.equals("SAVING")){
+                if(accountType.equals("SAVINGS")){
                         accountNew = new Account(clientRegistration, "VIN" + "-" + String.format("%07d", numberRandom.nextInt(1000000)), LocalDateTime.now(), 0.0, false, AccountType.SAVINGS);
                 } else {
                         accountNew = new Account(clientRegistration, "VIN" + "-" + String.format("%07d", numberRandom.nextInt(1000000)), LocalDateTime.now(), 0.0, false, AccountType.CHECKING);
@@ -59,7 +59,7 @@ public class ClientController {
         }
 
         @GetMapping("/api/clients")
-        public List<ClientDTO> getClient() {
+        public List<ClientDTO> getClients() {
               return clientRepository.findAll().stream().map(ClientDTO::new).collect(Collectors.toList());
         }
 
@@ -69,7 +69,7 @@ public class ClientController {
         }
 
         @GetMapping("/api/clients/current")
-        public ClientDTO getAll(Authentication authentication) {
+        public ClientDTO getClientDTO(Authentication authentication) {
                 Client client = clientRepository.findByEmail(authentication.getName());
                 return new ClientDTO(client);
          }

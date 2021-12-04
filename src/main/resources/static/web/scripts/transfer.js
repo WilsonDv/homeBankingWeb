@@ -89,13 +89,14 @@ const app = Vue.createApp({
                                     )
                                     setTimeout(location.reload.bind(location), 3000)
                                     })
-                                    .catch(e=>console.log(e.response.data))
+                                    .catch(error=>  error.response.data)
                                 } else {
                                     Swal.fire(
                                         'Successful!',
                                         'Successfully related.',
                                         'success'
                                     )
+                                    setTimeout(location.reload.bind(location), 3000)
                                 }
                             })    
                                 

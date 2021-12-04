@@ -33,6 +33,7 @@ public class CardsController {
         if (authentication.getAuthorities().iterator().next().toString().contains("CLIENT")) {
             if(!clientAutenticado.getAccounts().contains(account)){
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+
             }
             if(clientAutenticado.getCards().stream().filter(card-> !card.isCardDelete()).collect(Collectors.toSet()).size() < 6) {
 
