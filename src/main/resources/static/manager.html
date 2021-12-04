@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home BanKing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./web/styles.css">
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <header class="header d-flex align-items-center justify-content-center justify-content-md-between">
+             <img src="../assets/logo.png" alt="logo" class="logo">   
+             <h2 class="h2Header align-self-center">BanK Mindhub</h2> 
+        </header>
+        <h1 class="h1Main">Home BanKing</h1>
+        <main class="row d-flex m-0 flex-wrap justify-content-around">
+            <section class="container col-12 col-md-5 m-1">
+                <form class=" col-12  mb-3"  @submit.prevent="addClient">
+                    <h3>Client Manager</h3>
+                    <div class="col-12 mb-3 ">
+                        <label for="exampleInputPassword1" class="form-label">Name<span class="spanRojo">*</span></label>
+                        <input v-model="newClient[0]" type="text" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <div class="col-12  mb-3 ">
+                        <label for="exampleInputPassword1" class="form-label">Last Name<span class="spanRojo">*</span></label>
+                        <input v-model="newClient[1]" type="text" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <div class=" col-12  mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email Address <span class="spanRojo">*</span></label>
+                        <input v-model="newClient[2]" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required> 
+                    </div>
+                    <p><span class="spanRojo">*</span>Required fields</p>
+                    <button  type="submit" class="btn btn-primary">Add Client</button>
+                </form>
+                <table class="table table-success table-striped col-md-5 ">
+                    <h3>Client List</h3>
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody v-for="client in clients">
+                        <tr>
+                            <td>{{client.firstName}}</td>
+                            <td>{{client.lastName}}</td>
+                            <td>{{client.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+               <form class="col-12  mb-3"  @submit.prevent="addLoan"> 
+                    <h3>New Loan</h3>
+                    <div class="col-12 mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input v-model="name" type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="maxAmount" class="form-label">MaxAmount</label>
+                        <input v-model="maxAmount" type="text" class="form-control" id="maxAmount" required>
+                    </div>
+                    <div class="col-12  mb-3">
+                        <label for="percentage" class="form-label">Percentage</label>
+                        <input v-model="percentage" type="number" class="form-control" id="percentage" required>
+                    </div>
+                    <div class="d-flex justify-content-evenly mb-3">
+                            <h5>Payments</h5>
+                            <div class="form-check">
+                               <input  class="m-1" v-model="paymentSelected" type="radio" placeholder="Email Address" name="selectType" id="clientLoans1" value="6"  required>
+                                <label class="form-check-label" for="clientLoans1" >
+                                    6
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="m-1" type="radio" v-model="paymentSelected" placeholder="Email Address" name="selectType" id="clientLoans2"  value="12"  required>
+                                <label class="form-check-label" for="clientLoans2">
+                                    12
+                                </label>
+                            </div>
+                        </div>
+                    <button  type="submit" class="btn btn-primary " @click.prevent=" addLoan">Add Loan</button>
+                </form>
+            </section>
+            <section class="col-12 col-md-6">
+                <h3 class="text-center pt-2">Client REST response</h3>
+                <pre>{{clientJson}}</pre> 
+            </section>
+        </main>
+        <footer>
+            <h3 class="h3Footer p-3">&copy; 2021 BanK Mindhub | All Rights Reserved</h3>  
+        </footer>
+    </div><!--div app-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./manager.js"></script>
+</body>
+</html>

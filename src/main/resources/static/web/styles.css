@@ -1,0 +1,570 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background-color: #e9e9e9;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+    
+#app {
+    padding: 0;
+}
+
+header.header {
+    background: linear-gradient(135deg,#005baa 0,#005baa 0,#005baa 0,#00aeef 100%);
+    min-height: 15vh;
+}
+
+img.logo {
+    display: none;
+    max-width: 10vw;
+    margin: .5rem 2rem;
+}
+
+img.imgCirculo.logo {
+    width: 5vw;
+    border-radius: 100%;
+}
+
+.h2Header {
+    font-size: 2.2rem;
+    color: white;
+}
+
+span.nombrePerfil {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+ }
+
+h4.h4Saludo {
+    padding-left: 3rem;
+}
+
+span.spanClient {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+
+.h1Main {
+    text-align: center;
+}
+
+h4.targeh4 {
+    background: linear-gradient(45deg,#022b50 0,#07467c 0,#005baa 0,#00aeef 100%);
+}
+.spanRojo {
+    color: red;
+}
+
+.spanBalance {
+    font-size: 1.3rem;
+}
+
+/*Menu icono*/
+
+nav.navbar.iconos{
+    background-color: #3F51B5;
+}
+nav ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+nav ul li {
+    padding: 20px;
+}
+nav ul li:hover {
+    background-color: #1a2770;
+}
+nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+.iconos ul li a {
+    display: flex;
+    justify-content: center;
+}
+
+.iconos .icono {
+    flex: 0 1 2rem;
+    color: white;
+}
+
+.iconos .texto span {
+    font-size: .8rem;
+    display: block;
+    margin-top: .5rem;
+}
+
+.iconos ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.tamALetra {
+    font-size: .5rem;
+}
+
+/*cards*/
+
+div.cards {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 15px 35px rgba(82, 77, 77, 0.5);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    margin-bottom: 1.2rem;
+}
+
+.cards:hover {
+    cursor: pointer;
+}
+
+.parrafoSmall {
+    font-size: .5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.background-gold {
+    background: linear-gradient( #bf953f, #aa771c) !important;
+    color: white;
+}
+
+.background-silver {
+    background: linear-gradient( #161616, #747171) !important;
+    color: white;
+}
+
+.background-titanium {
+    background: linear-gradient( #92918f, #acaaaa) !important;
+    color: white;
+}
+
+
+.chip, .masterCard {
+    width: 3rem;
+    padding: 0 .5rem;
+}
+
+.numeroTar {
+    font-style: italic;
+}
+
+.msjTarjeta {
+    width: 200px;
+    height: 90px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    margin-bottom: 1.2rem;
+}
+
+.card-btn .btn {
+    font-size: .8rem;
+    padding: .3rem;
+}
+
+.card-btn2 {
+    color: white;
+    font-size: .9rem;
+    background-color: #5270f1c9;
+}
+
+.noneBotonAccounts {
+    display: none;
+}
+.cards3  {
+    min-height: 200px;
+}
+/*create-cards*/
+
+.h3Cards{
+    background-color: rgba(255, 255, 255, 0.205);
+    border-radius: 30px;
+    padding: .5rem;
+    font-weight: bold;
+}
+.fondo-card-main {
+    background-image: url(../assets/cards.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ /*padre e hijos cards*/
+ .padreCards {
+    position: relative;
+}
+
+.hijoCards {
+    position: absolute;
+    z-index: 1;
+    transition: all 2s ease-in;
+}
+
+.hijoCards:hover {
+    position: absolute;
+    z-index: -1;
+}
+
+
+/*.hijoCardsClick {
+    z-index: -1;
+    transition: all 1s linear;
+}*/
+
+/*Agregando aside en movimiento*/
+
+.swiper {
+    width: 25vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-slide {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide h3 {
+    position: absolute;
+    top: 0;
+    color: white;
+    background-color: rgba(26, 24, 24, 0.205);
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2rem;
+    margin: 0;
+}
+
+.swiper-slide img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hacerClient {
+    border: 2px solid white;
+    padding: 3rem;
+    border-radius: 50%;
+}
+
+
+/*Formulario*/
+
+main.mainForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #03a8f4c7;
+    background-image: url(../assets/imagen6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 35% 65%;
+    transform: 0.5s;
+    min-height: 100vh;
+
+}
+
+main.active {
+    /*background-color: #3453b9;*/
+    background-image: url(../assets/imagen5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.containerForm {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.blueBg {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(64, 159, 197, 0.60);
+    box-shadow: 0 5px 45px rgba( 0, 0, 0, 0.15);
+}
+
+.blueBg .box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blueBg .box h2 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.blueBg .box button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #ffff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+}
+
+.formBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #ffff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.formBx.active {
+    left: 50%;
+}
+
+.formBx .form {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+}
+
+.formBx .signinForm {
+    transition-delay: 0.25s ;
+}
+
+.formBx.active .signinForm {
+     left: -100%;
+     transition-delay: 0s;
+}
+
+.formBx .signupForm {
+    left: 100% ;
+    transition-delay: 0s;
+}
+
+.formBx.active .signupForm {
+    left: 0;
+    transition-delay: 0.25s;
+}
+
+.formBx .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formBx .form form h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.formBx .form form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+}
+
+.formBx .form form input[type="submit"]  {
+    background-color: #03a9f4;
+    border: none;
+    color: #fff;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.formBx.active .form form input[type="submit"] {
+    background-color: #002fff;
+}
+
+.formBx .form form {
+    color: #333;
+}
+
+.checkOk, .checkError{
+    display: block !important;
+}
+
+
+.colorSubTransferencia{
+    color: rgba(0, 47, 255, 0.938);
+}
+
+div.cuotasYTotal{
+    width: 20rem;
+    min-height: 20vh;
+    background: linear-gradient(135deg,#005baa 0,#005baa 0,#005baa 0,#00aeef 100%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(82, 77, 77, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    margin-bottom: 1.2rem;
+}
+
+div.parte2 {
+    width: 10rem;
+    min-height: 25vh;
+}
+
+div.parte2:hover {
+    transform: scale(1.15);
+}
+
+input {
+    caret-color: #0011ff!important;
+}
+@media (max-width: 375px) { 
+
+    div.parte2 {
+        width: 75%;
+        min-height: 25vh;
+    }
+}
+
+@media (max-width: 991px) {
+    .containerForm {
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerForm .blueBg {
+        top: 0;
+        height: 100%;
+
+    }
+
+    .formBx {
+        width: 100%;
+        height: 500px;
+        top: 0;
+        box-shadow: none;
+    }
+
+    .blueBg .box {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+
+    .box.signin {
+        top: 0;
+    }
+
+    .formBx.active {
+        left: 0;
+        top: 150px;
+    }
+}
+footer h3.h3Footer {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0!important;
+    background-color: rgb(71, 112, 245);
+    color : white;
+}
+
+@media screen and (min-width: 480px) {
+    
+    .iconos ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .iconos ul li {
+        flex: 0 1 50%;   
+    }
+}
+
+@media screen and (min-width:768px) {
+    .iconos ul li {
+        flex: 1;
+    }
+}
+
+@media (min-width: 576px) { 
+
+    header.header {
+        padding: .5rem 2rem;
+    }
+    img.logo {
+        display: block;
+    }
+
+    .h2Header {
+        font-size: 2.5rem;
+    }
+
+    .tamALetra {
+        font-size: 1rem;
+    }
+
+    .tamanioLetra {
+        font-size: 1.2rem;
+    }
+ }
+
+
+
+
