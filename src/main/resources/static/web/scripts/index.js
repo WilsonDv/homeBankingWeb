@@ -73,7 +73,8 @@ const app = Vue.createApp({
 
                         axios.post('/api/login',`email=${this.registration.email}&password=${this.registration.password}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
                             .then(response => {
-                                console.log(response)  
+                                Swal.fire('success')
+                                this.checkOK = !this.checkOK
                                 window.location.replace("/web/accounts.html")
                             })
                             .catch(error => {
